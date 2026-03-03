@@ -1,0 +1,23 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>FileBrowser Test</title>
+    <link rel="stylesheet" href="./css/themes/glass.css">
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script type="module">
+        import FileBrowserView from "./js/views/FileBrowserView.js";
+
+        const root = document.getElementById("app");
+        FileBrowserView(root);
+    </script>
+
+</body>
+
+</html>
