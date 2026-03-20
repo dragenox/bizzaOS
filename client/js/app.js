@@ -1,46 +1,66 @@
+import { loadTemplate } from "./utils/templateLoader.js"
+
 import { createLayout } from "./layouts/baseLayout.js"
 import { Navbar } from "./components/navbar.js"
 import { Sidebar } from "./components/sidebar.js"
-import { createModal } from "./components/modal.js"
+import { DashboardPage } from "./pages/dashboard.js"
 
 function textNode(text) {
-  const div = document.createElement("div")
-  div.textContent = text
-  return div
+    const div = document.createElement("div")
+    div.textContent = text
+    return div
 }
 
-// Navbar
-const navbar = Navbar({
-  left: textNode("bizzaOS"),
-  right: textNode("Profile")
-})
+// Template loader
+async function init() {
+    await Promise.all([
+        loadTemplate("/templates/baseLayout.html"),
+        loadTemplate("/templates/navbar.html"),
+        loadTemplate("/templates/sidebar.html"),
+        loadTemplate("/templates/sidebarSection.html"),
+        loadTemplate("/templates/sidebarItem.html"),
+        loadTemplate("/templates/card.html"),
+        loadTemplate("/templates/modal.html"),
+    ])
 
-// Sidebar
-const sidebar = Sidebar({
-  content: textNode("Sidebar Content")
-})
+    // Navbar
+    const navbar = Navbar({
+        left: textNode("bizzaOS"),
+        right: textNode("Profile")
+    })
 
-// Main
-const main = textNode("Dashboard")
+    // Sidebar (REAL DATA STRUCTURE)
+    const sidebar = Sidebar({
+        sections: [
+            {
+                title: "Apps",
+                items: [
+                    { label: "File Browser", active: true },
+                    { label: "Jellyfin" },
+                    { label: "Immich" }
+                ]
+            },
+            {
+                title: "System",
+                items: [
+                    { label: "Settings" },
+                    { label: "Logs" }
+                ]
+            }
+        ]
+    })
 
-const layout = createLayout({
-  navbar,
-  aside: sidebar,
-  main,
-  variant: "dashboard"
-})
+    // Main
+    const main = DashboardPage()
 
-document.getElementById("app-root").appendChild(layout)
+    const layout = createLayout({
+        navbar,
+        aside: sidebar,
+        main,
+        variant: "dashboard"
+    })
 
-// Test Modal after 2s
-setTimeout(() => {
-  const modalLayout = createLayout({
-    navbar: textNode("App Store"),
-    aside: textNode("Menu"),
-    main: textNode("Editor"),
-    variant: "dashboard"
-  })
+    document.getElementById("app-root").appendChild(layout)
+}
 
-  const modal = createModal(modalLayout)
-  document.getElementById("modal-root").appendChild(modal)
-}, 2000)
+init()

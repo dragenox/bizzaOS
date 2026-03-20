@@ -1,0 +1,17 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-icon {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 0.9rem;
+}
+
+.card-meta {
+  font-size: 0.75rem;
+}

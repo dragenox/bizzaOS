@@ -1,3 +1,6 @@
 # Ignore Plan
 plan/
 # Ignore ENV
+
+# Ignore Node Modules
+node_modules/
