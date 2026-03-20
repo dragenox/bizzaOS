@@ -1,0 +1,13 @@
+:root {
+  --nav-height: 3rem;
+  --footer-height: 1.75rem;
+  --aside-width: 14rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+}
