@@ -3,7 +3,8 @@ import { loadTemplate } from "./utils/templateLoader.js"
 import { createLayout } from "./layouts/baseLayout.js"
 import { Navbar } from "./components/navbar.js"
 import { Sidebar } from "./components/sidebar.js"
-import { DashboardPage } from "./pages/dashboard.js"
+// import { DashboardPage } from "./pages/dashboard.js"
+import { FileBrowserPage } from "./pages/fileBrowser.js"
 
 function textNode(text) {
     const div = document.createElement("div")
@@ -51,7 +52,8 @@ async function init() {
     })
 
     // Main
-    const main = DashboardPage()
+    //const main = DashboardPage()
+    const main = FileBrowserPage()
 
     const layout = createLayout({
         navbar,
