@@ -1,8 +1,9 @@
-// script.js
-import { DashboardPage } from ".js"
+import { render } from "/utils/renderer.js";
+import { DashboardPage } from "./js/dashboard.js";
 
-function showContent() {
-    const temp = document.getElementById("body");
-    const view = temp.content.cloneNode(true);
-    document.body.appendChild(view);
+async function init() {
+  await render("/views/dashboard.html", "app");
+  DashboardPage();
 }
+
+init();
