@@ -1,48 +1,77 @@
 /* public/css/dashboard.css */
 :root {
+
+    --github-navbar: #0d1116;
+    --github-aside: #0c1116;
+    --github-main: #0c1116;
+    --github-border-color: #40464c;
+    --github-dark-color: #020408;
+    --github-font-color: #e6edf4;
+
     --navbar-height: 4em;
     --navbar-padding: 0 1em;
-    --navbar-bg: black;
-    --navbar-text-color: white;
+    --navbar-bg: var(--github-navbar);
+    --navbar-font-color: var(--github-font-color);
+    --navbar-border: 1px solid var(--github-border-color);
+
+    --navbar-logo-color: #9450e2;
+    --navbar-view-color: #9fe24f;
 
     --aside-width: 10em;
     --aside-padding: 1em;
-    --aside-bg: #1e1e1e;
-    --aside-text-color: white;
+    --aside-bg: var(--github-aside);
+    --aside-font-color: var(--github-font-color);
+    --aside-border: 1px solid var(--github-border-color);
 
     --main-padding: 1em;
-    --main-bg: #f5f5f5;
+    --main-bg: var(--github-main);
+    --main-font-color: var(--github-font-color);
 
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 .navbar {
-  height: var(--navbar-height);
-  background: var(--navbar-bg);
-  color: var(--navbar-text-color);
-  display: flex;
-  align-items: center;
-  padding: var(--navbar-padding);
+    height: var(--navbar-height);
+    background: var(--navbar-bg);
+    color: var(--navbar-font-color);
+    display: flex;
+    align-items: center;
+    padding: var(--navbar-padding);
+    border-bottom: var(--navbar-border);
+}
+
+.navbar .logo {
+    color: var(--navbar-logo-color);
+}
+
+.navbar .view {
+    display: inline-flex;
+    color: var(--navbar-view-color);
 }
 
 .layout {
-  display: flex;
-  height: calc(100vh - var(--navbar-height));
+    display: flex;
+    height: calc(100vh - var(--navbar-height));
+    overflow: hidden;
 }
 
 .aside {
-  width: var(--aside-width);
-  background: var(--aside-bg);
-  color: var(--aside-text-color);
-  padding: var(--aside-padding);
+    overflow-y: auto;
+    width: var(--aside-width);
+    background: var(--aside-bg);
+    color: var(--aside-font-color);
+    padding: var(--aside-padding);
+    border-right: var(--aside-border);
 }
 
 .main {
-  flex: 1;
-  background: var(--main-bg);
-  padding: var(--main-padding);
+    overflow-y: auto;
+    flex: 1;
+    background: var(--main-bg);
+    color: var(--main-font-color);
+    padding: var(--main-padding);
 }
