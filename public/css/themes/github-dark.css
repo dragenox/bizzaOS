@@ -1,0 +1,9 @@
+/* css/themes/github-dark.css */
+:root {
+    --github-navbar: #0d1116;
+    --github-aside: #0c1116;
+    --github-main: #0c1116;
+    --github-border-color: #40464c;
+    --github-dark-color: #020408;
+    --github-font-color: #e6edf4;
+}

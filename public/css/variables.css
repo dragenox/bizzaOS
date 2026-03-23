@@ -1,1 +1,13 @@
-/* Placeholder for now */
+/* css/variables */
+:root {
+    --navbar-height: 4em;
+    --navbar-padding: 0 1em;
+
+    --navbar-logo-color: #9450e2;
+    --navbar-view-color: #9fe24f;
+
+    --aside-width: 10em;
+    --aside-padding: 1em;
+
+    --main-padding: 1em;
+}

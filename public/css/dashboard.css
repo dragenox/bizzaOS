@@ -1,32 +1,18 @@
-/* public/css/dashboard.css */
+/* css/dashboard.css */
+@import url(/css/variables.css);
+@import url(/css/themes/github-dark.css);
+
 :root {
-
-    --github-navbar: #0d1116;
-    --github-aside: #0c1116;
-    --github-main: #0c1116;
-    --github-border-color: #40464c;
-    --github-dark-color: #020408;
-    --github-font-color: #e6edf4;
-
-    --navbar-height: 4em;
-    --navbar-padding: 0 1em;
     --navbar-bg: var(--github-navbar);
     --navbar-font-color: var(--github-font-color);
     --navbar-border: 1px solid var(--github-border-color);
 
-    --navbar-logo-color: #9450e2;
-    --navbar-view-color: #9fe24f;
-
-    --aside-width: 10em;
-    --aside-padding: 1em;
     --aside-bg: var(--github-aside);
     --aside-font-color: var(--github-font-color);
     --aside-border: 1px solid var(--github-border-color);
 
-    --main-padding: 1em;
     --main-bg: var(--github-main);
     --main-font-color: var(--github-font-color);
-
 }
 
 body {
