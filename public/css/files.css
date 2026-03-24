@@ -1,1 +1,8 @@
 /* css/files.css */
+#files-main {
+  padding: 20px;
+}
+
+#dialog-close {
+  margin-left: auto;
+}

@@ -111,6 +111,7 @@ body {
 /* Dialog */
 dialog[open] {
   position: fixed;
+  inset: 0;
   width: auto;
   height: auto;
   max-width: none;

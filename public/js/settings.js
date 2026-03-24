@@ -1,15 +1,15 @@
-// js/files.js
-export function FilesPage() {
-  console.log("📁 Files initialized");
+// js/settings.js
+export function SettingsPage() {
+  console.log("⚙️ Settings initialized");
 
-  const main = document.getElementById("files-main");
+  const main = document.getElementById("settings-main");
   const closeBtn = document.getElementById("dialog-close");
   const dialog = document.getElementById("app-dialog");
 
   if (main) {
     main.innerHTML = `
-      <h1>File Browser</h1>
-      <p>All your files here</p>
+      <h1>Settings</h1>
+      <p>Configure your system</p>
     `;
   }
 
