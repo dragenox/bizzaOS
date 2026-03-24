@@ -1,0 +1,39 @@
+/* css/themes/dark.css */
+
+/* Github Dark */
+:root.theme-github {
+    --color-navbar: #0d1116;
+    --color-aside: #0c1116;
+    --color-main: #0c1116;
+    --color-border: #40464c;
+    --color-border-dark: var(--color-border);
+    --color-text: #e6edf4;
+    --color-details-content: #1e2227;
+}
+
+/* Atom Dark */
+:root.theme-atom {
+    --color-navbar: #21252b;
+    --color-aside: #1e2227;
+    --color-main: #1e2227;
+    --color-border: #3a4048;
+    --color-border-dark: var(--color-border);
+    --color-text: #abb2bf;
+    --color-aside: #1e2227;
+    --color-details-content: #0c1116;
+}
+
+/* Drage Dark */
+:root.theme-drage {
+    --color-navbar: #28282a;
+    --color-aside: #222222;
+    --color-main: #222222;
+    --color-footer: #282829;
+    --color-border: #40464c;
+    --color-border-dark: #1c1c1c;
+    --color-text: #ffffff;
+    --color-text-muted: #a8a8a8;
+    --color-button: #424242;
+    --color-details-summary: #333333;
+    --color-details-content: #282828;
+}

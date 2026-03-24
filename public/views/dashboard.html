@@ -5,13 +5,36 @@
         <div class="name">dashboard</div>
     </div>
 </nav>
-
 <div class="layout">
     <aside class="aside">
-        Sidebar
+        <details name="themes">
+            <summary>Themes</summary>
+            <div class="content">
+                <select name="themes" id="themes"></select>
+            </div>
+        </details>
+        <details name="files">
+            <summary>Files</summary>
+            <div class="content">
+                <button command="show-modal" commandfor="files-dialog">Files</button>
+            </div>
+        </details>
+        <details name="settings">
+            <summary>Settings</summary>
+            <div class="content">
+                <button command="show-modal" commandfor="settings-dialog">Settings</button>
+            </div>
+        </details>
     </aside>
-
     <main class="main">
         <!-- Main Content -->
     </main>
 </div>
+<dialog id="files-dialog">
+    <p>Files Page.</p>
+    <button commandfor="files-dialog" command="close">Close</button>
+</dialog>
+<dialog id="settings-dialog">
+    <p>Settings Page.</p>
+    <button commandfor="settings-dialog" command="close">Close</button>
+</dialog>

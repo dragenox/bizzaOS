@@ -1,17 +1,24 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>bizzaOS</title>
 
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    const saved = localStorage.getItem("theme") || "github";
+    document.documentElement.classList.add(`theme-${saved}`);
+  </script>
+  <link rel="stylesheet" href="/css/themes/dark.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 
 <body>
   <div id="app"></div>
-
-  <script type="module" src="script.js"></script>
+  <script type="module" src="/script.js"></script>
 </body>
+
 </html>
