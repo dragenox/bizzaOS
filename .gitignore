@@ -1,4 +1,7 @@
 # .gitignore
 
+# Ignore Plans
+plan/
+
 # Ignore Node Modules
 node_modules/
