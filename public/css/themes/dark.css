@@ -9,6 +9,10 @@
     --color-border-dark: var(--color-border);
     --color-text: #e6edf4;
     --color-details-content: #1e2227;
+    --color-hover: #1e2227;
+    --color-selected: #1e2227;
+    --aside-color-hover: var(--color-border);
+    --aside-color-selected: var(--color-border);
 }
 
 /* Atom Dark */
@@ -21,6 +25,10 @@
     --color-text: #abb2bf;
     --color-aside: #1e2227;
     --color-details-content: #0c1116;
+    --color-hover: #0c1116;
+    --color-selected: #0c1116;
+    --aside-color-hover: var(--color-border);
+    --aside-color-selected: var(--color-border);
 }
 
 /* Drage Dark */
@@ -36,4 +44,8 @@
     --color-button: #424242;
     --color-details-summary: #333333;
     --color-details-content: #282828;
+    --color-hover: #333333;
+    --color-selected: #333333;
+    --aside-color-hover: var(--color-border);
+    --aside-color-selected: var(--color-border);
 }
