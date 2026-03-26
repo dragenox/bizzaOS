@@ -57,5 +57,8 @@
     --color-danger: #da3633;
     --color-danger-emphasis: #f85149;
     --color-danger-muted: #f8514926;
+    --color-select-background: #262626;
+    --color-tab-section-title-bg: #262626;
+    --color-tab-section-content-bg: #1e1e1e;
 
 }
