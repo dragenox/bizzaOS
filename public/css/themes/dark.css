@@ -48,6 +48,16 @@
     --color-text: #ffffff;
     --color-text-muted: #a8a8a8;
     --color-button: #424242;
+    --color-button1: #1d1d1d;
+    --color-button1-font: #e5e6ea;
+    --color-button1-hover: #ffffff;
+    --color-button1-hover-font: #000000;
+    --color-button1-active: #1d1d1d;
+    --color-button1-active-font: #e5e6ea;
+    --color-button1-border: #343434;
+    --color-button2: #262626;
+    --color-button2-hover: #3a3a3a;
+    --color-button2-active: #1f1f1f;
     --color-details-summary: #333333;
     --color-details-content: #282828;
     --color-hover: #333333;
