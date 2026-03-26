@@ -7,8 +7,12 @@ const PORT = 3000;
 // Serve public folder
 app.use(express.static(path.join(__dirname, "public")));
 
-// Serve renderer utils as well
+// Serve renderer utils
 app.use("/utils", express.static(path.join(__dirname, "utils")));
+
+// Serve static files
+// bootstrap-icons
+app.use('/vendor/bootstrap-icons', express.static('node_modules/bootstrap-icons/font'))
 
 // Default route
 app.get("/", (req, res) => {

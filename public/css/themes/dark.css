@@ -11,8 +11,11 @@
     --color-details-content: #1e2227;
     --color-hover: #1e2227;
     --color-selected: #1e2227;
-    --aside-color-hover: var(--color-border);
-    --aside-color-selected: var(--color-border);
+    --color-aside-hover: var(--color-border);
+    --color-aside-selected: var(--color-border);
+    --color-danger: #f85149;
+    --color-danger-emphasis: #da3633;
+    --color-danger-muted: #f8514926;
 }
 
 /* Atom Dark */
@@ -27,8 +30,11 @@
     --color-details-content: #0c1116;
     --color-hover: #0c1116;
     --color-selected: #0c1116;
-    --aside-color-hover: var(--color-border);
-    --aside-color-selected: var(--color-border);
+    --color-aside-hover: var(--color-border);
+    --color-aside-selected: var(--color-border);
+    --color-danger: #f85149;
+    --color-danger-emphasis: #da3633;
+    --color-danger-muted: #f8514926;
 }
 
 /* Drage Dark */
@@ -46,6 +52,10 @@
     --color-details-content: #282828;
     --color-hover: #333333;
     --color-selected: #333333;
-    --aside-color-hover: var(--color-border);
-    --aside-color-selected: var(--color-border);
+    --color-aside-hover: #333333;
+    --color-aside-active: #40464c;
+    --color-danger: #da3633;
+    --color-danger-emphasis: #f85149;
+    --color-danger-muted: #f8514926;
+
 }

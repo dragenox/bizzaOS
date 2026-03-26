@@ -1,8 +1,21 @@
 /* css/files.css */
 #files-main {
-  padding: 20px;
+  padding: var(--main-padding);
 }
 
+/* Dialog Close button */
 #dialog-close {
   margin-left: auto;
+  color: var(--color-danger);
+  background-color: transparent;
+  border: none;
+  font-size: large;
+}
+
+#dialog-close:hover {
+  color: var(--color-danger-emphasis);
+}
+
+#dialog-close:active {
+  color: var(--color-danger);
 }
