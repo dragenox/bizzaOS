@@ -9,7 +9,8 @@ export function DashboardPage() {
   const main = document.querySelector(".main");
   const select = document.getElementById("themes");
 
-  const filesBtn = document.querySelector('[commandfor="files-dialog"]');
+  // const filesBtn = document.querySelector('[commandfor="files-dialog"]');
+  const filesBtn = document.getElementById("filesManager");
   const settingsBtn = document.querySelector('[commandfor="settings-dialog"]');
 
   // Reorder Apps Logic
@@ -28,27 +29,41 @@ export function DashboardPage() {
       // Enable drag
       sortable = new Sortable(apps, {
         animation: 150,
-
         // only drag via grip icon
         handle: ".bi-grip-horizontal",
 
+        // cannot drag system apps
+        filter: ".system",          
+        preventOnFilter: false,
+
         ghostClass: "drag-ghost",
         chosenClass: "drag-chosen",
-
-        // optional: smoother feel
+        // smoother feel
         dragClass: "drag-dragging",
 
         onStart: () => {
           document.body.classList.add("drag-active");
         },
 
+        onMove: (evt) => {
+          const dragged = evt.dragged;
+          const related = evt.related;
+
+          // prevent dropping before system apps
+          if (related && related.classList.contains("system")) {
+            return false;
+          }
+
+          return true;
+        },
+
         onEnd: () => {
           document.body.classList.remove("drag-active");
 
-          // Save order (basic version)
-          const order = [...apps.children].map((el, index) => {
-            return el.querySelector(".label")?.textContent.trim();
-          });
+          // Save ONLY non-system apps order
+          const order = [...apps.children]
+            .filter(el => !el.classList.contains("system"))
+            .map(el => el.querySelector(".label")?.textContent.trim());
 
           console.log("📦 New Order:", order);
 
@@ -97,7 +112,7 @@ export function DashboardPage() {
     });
   });
 
-  // Restore Order (optional but useful)
+  // Restore Order
   const savedOrder = localStorage.getItem("bizzaOS-app-order");
 
   if (savedOrder) {
