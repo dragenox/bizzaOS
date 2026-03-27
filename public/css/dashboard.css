@@ -109,20 +109,97 @@ body {
 
 /* Dialog */
 dialog[open] {
-  position: fixed;
-  inset: 0;
-  width: auto;
-  height: auto;
-  max-width: none;
-  max-height: none;
-  margin: 0;
-  padding: 0;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  z-index: 9999;
+    position: fixed;
+    inset: 0;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
 }
 
 dialog::backdrop {
-  margin: 0;
+    margin: 0;
+}
+
+/* toolbar */
+.dashboard.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.25em;
+}
+
+/* app list */
+.apps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 10em);
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+}
+
+/* app card */
+.app.card {
+    aspect-ratio: 1 / 1;
+
+    display: grid;
+    /* options / icon / label */
+    grid-template-rows: auto 1fr auto;
+
+    position: relative;
+    overflow: hidden;
+
+    background: var(--color-tab-section-content-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75em;
+}
+
+/* app options */
+.app.card > .options {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    height: 2em;
+    padding: 0 0.5em;
+
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* app icon */
+.app.card>.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app.card>.icon .icon-box {
+    aspect-ratio: 1 / 1;
+    width: 70%;
+    /* 👈 controls size */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app.card>.icon i {
+    font-size: 2.5rem;
+}
+
+/* app label */
+.app.card>.label {
+    text-align: center;
+    padding: 0.5em;
+    font-size: 0.9rem;
+
+    background: var(--color-tab-section-title-bg);
+    border-top: 1px solid var(--color-border);
 }

@@ -10,11 +10,11 @@ export function DashboardPage() {
   const filesBtn = document.querySelector('[commandfor="files-dialog"]');
   const settingsBtn = document.querySelector('[commandfor="settings-dialog"]');
 
-  // ❌ REMOVE command="show-modal" behavior
+  // REMOVE command="show-modal" behavior
   filesBtn.removeAttribute("command");
   settingsBtn.removeAttribute("command");
 
-  // ✅ Files
+  // Files
   filesBtn.addEventListener("click", () => {
     openDialog({
       view: "/views/files.html",
@@ -24,7 +24,7 @@ export function DashboardPage() {
     });
   });
 
-  // ✅ Settings
+  // Settings
   settingsBtn.addEventListener("click", () => {
     openDialog({
       view: "/views/settings.html",
@@ -34,31 +34,10 @@ export function DashboardPage() {
     });
   });
 
-  // // themes logic (unchanged)
-  // const themes = [
-  //   { id: "github", label: "GitHub Dark" },
-  //   { id: "atom", label: "Atom Dark" },
-  //   { id: "drage", label: "Drage Dark" }
-  // ];
-
-  // themes.forEach(theme => {
-  //   const option = document.createElement("option");
-  //   option.value = theme.id;
-  //   option.textContent = theme.label;
-  //   select.appendChild(option);
-  // });
-
-  // const current = localStorage.getItem("theme") || "drage";
-  // select.value = current;
-
-  // select.addEventListener("change", (e) => {
-  //   setTheme(e.target.value);
-  // });
-
-  if (main) {
-    main.innerHTML = `
-      <h1>Welcome to bizzaOS</h1>
-      <p>This is your dashboard.</p>
-    `;
-  }
+  // if (main) {
+  //   main.innerHTML = `
+  //     <h1>Welcome to bizzaOS</h1>
+  //     <p>This is your dashboard.</p>
+  //   `;
+  // }
 }
