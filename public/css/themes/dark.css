@@ -1,5 +1,80 @@
 /* css/themes/dark.css */
 
+/* template Dark */
+:root.theme-template {
+    --color-navbar: #28282a;
+    --color-aside: #222222;
+    --color-main: #222222;
+    --color-footer: #282829;
+    --color-border: #40464c;
+    --color-border-dark: #1c1c1c;
+    --color-text: #ffffff;
+    --color-text-muted: #a8a8a8;
+    --color-button: #424242;
+    --color-button1: #1d1d1d;
+    --color-button1-font: #e5e6ea;
+    --color-button1-hover: #ffffff;
+    --color-button1-hover-font: #000000;
+    --color-button1-active: #1d1d1d;
+    --color-button1-active-font: #e5e6ea;
+    --color-button1-border: #343434;
+    --color-button2: #262626;
+    --color-button2-hover: #3a3a3a;
+    --color-button2-active: #1f1f1f;
+    --color-details-summary: #333333;
+    --color-details-content: #282828;
+    --color-hover: #333333;
+    --color-selected: #333333;
+    --color-aside-hover: #333333;
+    --color-aside-active: #40464c;
+    --color-danger: #da3633;
+    --color-danger-emphasis: #f85149;
+    --color-danger-muted: #f8514926;
+    --color-select-background: #262626;
+    --color-tab-section-title-bg: #262626;
+    --color-tab-section-content-bg: #1e1e1e;
+}
+
+/* bootstrap colors */
+:root.colors-bootstrap {
+    --color-body: #dfe1e5;
+    --color-body-bg: #212529;
+    --color-secondary: #afb3b6;
+    --color-secondary-bg: #343a41;
+    --color-tertiary: #7f8387;
+    --color-tertiary-bg: #2b3036;
+    --color-emphasis: #ffffff;
+    --color-border: #4a5058;
+    --color-primary: #0b6ffd;
+    --color-primary-bg: #031533;
+    --color-primary-border: #084298;
+    --color-primary-text: #6ea7ff;
+    --color-success: #1a8755;
+    --color-success-bg: #051a10;
+    --color-success-border: #0f5132;
+    --color-success-text: #72b798;
+    --color-danger: #dc3545;
+    --color-danger-bg: #2c0c0d;
+    --color-danger-border: #852129;
+    --color-danger-text: #eb858f;
+    --color-warning: #ffc206;
+    --color-warning-bg: #332801;
+    --color-warning-border: #9a7305;
+    --color-warning-text: #ffdb69;
+    --color-info: #14c9ef;
+    --color-info-bg: #032830;
+    --color-info-border: #0a7890;
+    --color-info-text: #6de0f6;
+    --color-light: #f8f9fa;
+    --color-light-bg: #343a41;
+    --color-light-border: #4a5057;
+    --color-light-text: #f8f9fa;
+    --color-dark: #212529;
+    --color-dark-bg: #1b1d20;
+    --color-dark-border: #343a41;
+    --color-dark-text: #dfe1e5;
+}
+
 /* Github Dark */
 :root.theme-github {
     --color-navbar: #0d1116;
@@ -70,5 +145,4 @@
     --color-select-background: #262626;
     --color-tab-section-title-bg: #262626;
     --color-tab-section-content-bg: #1e1e1e;
-
 }

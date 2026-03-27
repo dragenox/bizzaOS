@@ -79,8 +79,9 @@ aside .item.active {
 
 .tab-content > section > .content > select:focus-visible {
   border-color: var(--color-text-muted);
-  /* box-shadow: 0 0 0 2px rgba(100, 150, 255, 0.3); */
 }
+
+/* Buttons */
 
 .button1 {
   padding: .5em 1em;
@@ -101,7 +102,6 @@ aside .item.active {
   color: var(--color-button1-active-font);
 }
 
-/* test btn style */
 .button2 {
   display: flex;
   align-items: center;
