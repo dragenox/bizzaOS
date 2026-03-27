@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "bootstrap-icons": "^1.13.1",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "simple-icons": "^16.13.0",
+    "sortablejs": "^1.15.7"
   }
 }

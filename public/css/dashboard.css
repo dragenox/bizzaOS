@@ -135,71 +135,206 @@ dialog::backdrop {
     font-size: 1.25em;
 }
 
+.reorder-toggle {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+/* hide checkbox */
+.reorder-toggle input {
+    display: none;
+}
+
+/* both icons stacked */
+.reorder-toggle i {
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+/* default: show first, hide second */
+.reorder-toggle .bi-grid-3x2-gap {
+    display: none;
+}
+
+/* when checked → swap */
+.reorder-toggle input:checked~.bi-grid-3x2 {
+    display: none;
+}
+
+.reorder-toggle input:checked~.bi-grid-3x2-gap {
+    display: inline-block;
+}
+
+.reorder-toggle i {
+    transition: opacity 0.2s ease;
+}
+
+.reorder-toggle:hover i {
+    opacity: 1;
+}
+
+/* sortablejs css */
+/* dragging item */
+.drag-chosen {
+    transform: scale(1.05);
+    opacity: 0.9;
+    z-index: 10;
+}
+
+/* placeholder */
+.drag-ghost {
+    opacity: 0.3;
+}
+
+/* while dragging */
+.drag-dragging {
+    cursor: grabbing !important;
+}
+
+/* body state */
+body.drag-active {
+    user-select: none;
+}
+
+/* Applications */
 /* app list */
 .apps {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 10em);
-    gap: 1em;
     list-style: none;
-    padding: 0;
+    display: grid;
+    gap: 1.25em;
+    grid-template-columns: repeat(auto-fill, 10em);
+    padding: 0.4em 0.5em;
+}
+
+.apps.reorder-mode {
+    background: var(--color-tab-section-content-bg);
+    border-radius: 0.9em;
+    border: 1px solid var(--color-border-dark);
+}
+
+.apps.reorder-mode .bi-grip-horizontal {
+    opacity: 1;
+}
+
+.apps.reorder-mode .app.card:hover .bi-grip-horizontal {
+    opacity: 1;
 }
 
 /* app card */
 .app.card {
-    aspect-ratio: 1 / 1;
-
     display: grid;
-    /* options / icon / label */
-    grid-template-rows: auto 1fr auto;
-
     position: relative;
+    /* options / icon / label */
+    grid-template-rows: 1fr auto;
+    aspect-ratio: 1 / 1.1;
+    width: 10em;
     overflow: hidden;
-
     background: var(--color-tab-section-content-bg);
     border: 1px solid var(--color-border);
     border-radius: 0.75em;
 }
 
-/* app options */
-.app.card > .options {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    height: 2em;
-    padding: 0 0.5em;
-
-    font-size: 0.8rem;
-    opacity: 0.6;
+.app.card {
+    transition: opacity 0.2s ease, background 0.2s ease;
 }
 
-/* app icon */
+/* app card options */
+.app.card>.options {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* default state */
+.app.card .options {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* reorder mode → center */
+.apps.reorder-mode .app.card .options {
+    left: 0;
+    right: 0;
+    top: 4px;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* default */
+.app.card .bi-grip-horizontal {
+    display: none;
+    cursor: grab;
+}
+
+/* hide by default */
+.app.card .bi-three-dots-vertical {
+    display: inline-block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+/* show on hover */
+.app.card:hover .bi-three-dots-vertical {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* reorder mode */
+.apps.reorder-mode .bi-grip-horizontal {
+    display: inline-block;
+}
+
+.apps.reorder-mode .bi-three-dots-vertical {
+    display: none;
+}
+
+/* app card icon */
 .app.card>.icon {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0.75em;
+    overflow: hidden;
 }
 
-.app.card>.icon .icon-box {
+.app.card>.icon>* {
+    height: 100%;
+    width: auto;
     aspect-ratio: 1 / 1;
-    width: 70%;
-    /* 👈 controls size */
-
-    display: flex;
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
     align-items: center;
     justify-content: center;
 }
 
-.app.card>.icon i {
-    font-size: 2.5rem;
+.app.card>.icon img {
+    object-fit: contain;
 }
 
-/* app label */
+.app.card>.icon i {
+    font-size: 5.625em;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* app card label */
 .app.card>.label {
     text-align: center;
     padding: 0.5em;
     font-size: 0.9rem;
-
     background: var(--color-tab-section-title-bg);
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid var(--color-border-dark);
 }
