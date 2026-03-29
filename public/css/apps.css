@@ -1,0 +1,42 @@
+/* css/apps.css */
+@import url(/css/variables.css);
+
+/* aside tabs */
+#settings-aside {
+  display: flex;
+  flex-direction: column;
+}
+
+#settings-aside .tab {
+  display: flex;
+  cursor: pointer;
+  padding: var(--aside-padding);
+  color: inherit;
+  font: inherit;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* main content */
+#settings-main {
+  padding: 1em;
+}
+
+/* Dialog Close Button */
+#dialog-close {
+  margin-left: auto;
+  color: var(--color-danger);
+  background-color: transparent;
+  border: none;
+  font-size: large;
+}
+
+#dialog-close:hover {
+  color: var(--color-danger-emphasis);
+}
+
+#dialog-close:active {
+  color: var(--color-danger);
+}

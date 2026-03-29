@@ -9,9 +9,24 @@ export function DashboardPage() {
   const main = document.querySelector(".main");
   const select = document.getElementById("themes");
 
-  // const filesBtn = document.querySelector('[commandfor="files-dialog"]');
+  const appsBtn = document.getElementById("appsManager");
   const filesBtn = document.getElementById("filesManager");
   const settingsBtn = document.querySelector('[commandfor="settings-dialog"]');
+
+  const terminalApp = document.getElementById("terminal");
+
+  // function to apply state
+  function updateTerminalVisibility() {
+    const enabled = localStorage.getItem("bizzaOS-terminal-visible") === "true";
+
+    terminalApp.classList.toggle("hidden", !enabled);
+  }
+
+  // run on load
+  updateTerminalVisibility();
+
+  // listen for changes from settings
+  window.addEventListener("terminal-toggle", updateTerminalVisibility);
 
   // Reorder Apps Logic
   const toggle = document.getElementById("reorderApps");
@@ -33,7 +48,7 @@ export function DashboardPage() {
         handle: ".bi-grip-horizontal",
 
         // cannot drag system apps
-        filter: ".system",          
+        filter: ".system",
         preventOnFilter: false,
 
         ghostClass: "drag-ghost",
@@ -91,8 +106,18 @@ export function DashboardPage() {
   });
 
   // Dialog Overrides
+  appsBtn.removeAttribute("command");
   filesBtn.removeAttribute("command");
   settingsBtn.removeAttribute("command");
+
+  appsBtn.addEventListener("click", () => {
+    openDialog({
+      view: "/views/apps.html",
+      script: "/js/apps.js",
+      style: "/css/apps.css",
+      init: "AppsPage"
+    });
+  });
 
   filesBtn.addEventListener("click", () => {
     openDialog({
@@ -112,6 +137,8 @@ export function DashboardPage() {
     });
   });
 
+
+
   // Restore Order
   const savedOrder = localStorage.getItem("bizzaOS-app-order");
 
@@ -125,7 +152,8 @@ export function DashboardPage() {
         const aText = a.querySelector(".label")?.textContent.trim();
         const bText = b.querySelector(".label")?.textContent.trim();
 
-        return order.indexOf(aText) - order.indexOf(bText);
+        // return order.indexOf(aText) - order.indexOf(bText);
+        return (order.indexOf(aText) || 999) - (order.indexOf(bText) || 999);
       });
 
       items.forEach(el => apps.appendChild(el));

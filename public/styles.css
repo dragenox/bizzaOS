@@ -20,7 +20,12 @@ html, body {
   flex-direction: column;
 }
 
+/* utils */
+.hidden {
+  display: none !important;
+}
 
+/* aside Sidebar */
 aside .item {
   background: var(--color-aside);
 }
